@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./EventEmitter.js"></script>
+  <script>
+    let event = new EventEmitter()
+    event.addListener('drink', (args) => console.log('喝2喝', args))
+    event.addListener('drink', (args) => console.log('喝1喝', args))
+    event.emitEvent('drink', ['带带'])
+    // same as
+    event.emit('drink', '带带')
+    event.getListenersAsObject('')
+    console.log(event.getListeners('drink'))
+    console.log('this', EventEmitter, EventEmitter.prototype, event)
+  </script>
+</body>
+</html>

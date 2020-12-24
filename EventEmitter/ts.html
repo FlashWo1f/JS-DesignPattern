@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./EventEmitterTs.js"></script>
+  <script>
+    let event = new EventEmitterTs()
+    event.addListener('drink', (args) => console.log('喝2喝dsm', args), true)
+    event.addListener('drink', (args) => console.log('喝1喝dsm', args))
+    // event.addListener('drink', (args) => console.log('喝1222喝dsm', args))
+    event.emit('drink', '带带')
+    event.removeEvent('drink')
+    event.emit('drink', '带带1')
+    event.emit('none', '带带')
+    // console.log('this', EventEmitterTs, EventEmitterTs.prototype, event)
+  </script>
+</body>
+</html>
